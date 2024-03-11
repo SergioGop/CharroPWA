@@ -1,0 +1,117 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .contenedor {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .imagen {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100vw;
+    object-fit: cover;
+    height: auto;
+    transition: opacity 0.5s ease; /* Agregamos una transición de opacidad */
+    opacity: 1; /* Aseguramos que la opacidad esté al máximo al principio */
+    position: absolute;
+  }
+  
+  .imagen.oculto {
+    opacity: 0; /* Establecemos la opacidad a 0 para ocultar la imagen */
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con transparencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* Estilos adicionales para el texto y los botones */
+  h1 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darkblue;
+  }
+
+  /* Estilos para el sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Posición inicial fuera de la pantalla */
+    width: 250px;
+    height: 100%;
+    background-color: #555;
+    overflow-x: hidden;
+    transition: 0.5s; /* Efecto de transición */
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    background-color: #444;
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+    position: absolute; /* Posicionamiento absoluto para que esté sobre la imagen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 10; /* Asegurarse de que el encabezado esté sobre la imagen */
+  }
+  
+  .logo {
+    width: 350px; /* Ajusta esto según el tamaño de tu logo */
+    height: auto;
+  }
+  
+  #sidebarToggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 50px;
+    font-size: 40px;
+  }
