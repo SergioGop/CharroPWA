@@ -6,38 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybercharro</title>
     <link rel="stylesheet" href="assets/main.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="shortcut icon" type="image/png" href="assets/img/favicon-96.png">
+    <!-- <link rel="shortcut icon" type="image/png" href="assets/img/favicon-96.png"> -->
     <meta name="theme-color" content="#FBDE33">
     <meta name="MobileOptimazed" content="width">
     <meta name="HandhelpFriendly" content="true">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-traslucent">
-    <link rel="apple-touch-icon" href="assets/img/favicon-96.png">
-    <link rel="apple-touch-startup-image" href="assets/img/favicon-96.png">
+    <!-- <link rel="apple-touch-icon" href="assets/img/favicon-96.png"> -->
+    <!-- <link rel="apple-touch-startup-image" href="assets/img/favicon-96.png"> -->
     <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
+
+    <!-- HEADER -->
     <header>
         <img src="assets\image\logo.png" alt="Logo de la Empresa" class="logo">
         <button id="sidebarToggle">☰</button>
     </header>
+    <!-- FIN HEADER -->
 
-    <div id="sidebar" class="sidebar">
-        <!-- Contenido del sidebar aquí -->
+    <!-- NAVEGACION -->
+
+    <div id="overlay" class="overlay" style="display: none;">
+        <!-- Contenido central del overlay con enlaces -->
+        <div class="overlay-content">
+            <a href="pagina2.html">Inicio</a>
+          <a href="pagina1.html">Descargar PC</a>
+          <a href="pagina3.html">Estadisticas</a>
+          <a href="" id="closeOverlay">X</a>
+          <!-- Agrega tantos enlaces como necesites -->
+        </div>
     </div>
+    <!-- FIN NAVEGACION -->
+
+    <!-- FONDO -->
 
     <div class="contenedor">
         <img src="assets/image/imagen-2.webp" alt="Imagen" class="imagen" id="imagen">
-        <div class="overlay">
-            <!-- Aquí puedes colocar tu texto y botones -->
-            <!-- <h1>Título de la Página</h1> -->
-            <!-- <button>Click Me</button> -->
-        </div>
     </div>
+    <!-- FIN FONDO -->
+
+        <!-- CONTAINER -->
+
+        <div id="contenido-dinamico" class="contenido-dinamico">
+        
+        </div>
+    
+        <!-- FIN CONTAINER -->
+
 </body>
 
+
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/functions.js"></script>
 <script src="main.js"></script>
 
 </html>

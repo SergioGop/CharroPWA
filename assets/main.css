@@ -16,14 +16,19 @@ body, html {
   }
   
   .imagen {
-    max-width: 100%;
-    max-height: 100%;
-    width: 100vw;
-    object-fit: cover;
-    height: auto;
-    transition: opacity 0.5s ease; /* Agregamos una transición de opacidad */
-    opacity: 1; /* Aseguramos que la opacidad esté al máximo al principio */
+    width: 100%; /* Se ajustará al ancho del contenedor */
+    height: 100vh; /* Ajustará al alto del viewport */
+    object-fit: cover; /* Cubrirá todo el contenedor, se recortará si es necesario */
     position: absolute;
+    top: 0; /* Alinea la imagen al principio del contenedor */
+    left: 0; /* Alinea la imagen al principio del contenedor */
+  }
+
+  @media (max-width: 600px) {
+    .imagen {
+      height: 100vh; /* O el alto que necesites para cubrir el espacio en la resolución móvil */
+      /* Otros ajustes específicos para móviles */
+    }
   }
   
   .imagen.oculto {
@@ -61,32 +66,6 @@ body, html {
   button:hover {
     background-color: darkblue;
   }
-
-  /* Estilos para el sidebar */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -250px; /* Posición inicial fuera de la pantalla */
-    width: 250px;
-    height: 100%;
-    background-color: #555;
-    overflow-x: hidden;
-    transition: 0.5s; /* Efecto de transición */
-    padding-top: 60px;
-  }
-  
-  .sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidebar a:hover {
-    background-color: #444;
-  }
   
   /* Estilos para el encabezado */
   header {
@@ -112,6 +91,75 @@ body, html {
     color: white;
     font-size: 24px;
     cursor: pointer;
-    margin-right: 50px;
+    margin-right: 100px;
     font-size: 40px;
   }
+
+  /* Estilos para el fondo difuminado */
+.overlay {
+  position: fixed; /* Posicionamiento fijo respecto al viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Gris semi-transparente */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+}
+
+/* Estilos para el contenido del overlay */
+.overlay-content {
+  text-align: center; /* Centrado de texto para los enlaces */
+}
+
+/* Estilos para el contenido del overlay */
+.overlay-content a {
+  display: block; /* Cada enlace en su propia línea */
+  margin: 25px 0; /* Espaciado entre enlaces */
+  font-size: 1.5rem; /* Tamaño de fuente grande */
+  color: #fff; /* Texto blanco para contraste */
+  text-decoration: none; /* Sin subrayado en los enlaces */
+  font-weight: bold; /* Texto en negrita para mayor presencia */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente blanco para resaltar el enlace */
+  padding: 10px; /* Espacio alrededor del texto */
+  border-radius: 5px; /* Bordes redondeados para los enlaces */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+}
+
+.overlay-content a:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo más claro al pasar el mouse */
+  color: #000; /* Texto en color oscuro para el hover */
+  text-decoration: underline; /* Subrayar el enlace al pasar el mouse (opcional) */
+}
+
+a#closeOverlay:hover {
+  color: #ff0000
+}
+
+/* Estilos para el contenedor de contenido dinámico */
+.contenido-dinamico {
+  width: 80%; /* Ancho del contenedor */
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+  background-color: transparent; /* Color de fondo del contenedor */
+  position: relative; /* Ajusta el posicionamiento */
+}
+
+/* Estilos para el cuadro difuminado */
+.cuadro-difuminado {
+  background: rgba(0, 0, 0, 0.5); /* Color negro con transparencia */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  overflow-y: scroll; /* Agrega scroll vertical si es necesario */
+  max-height: 300px; /* Altura máxima del cuadro antes de activar el scroll */
+}
+
+/* Estilos para el párrafo dentro del cuadro difuminado */
+.cuadro-difuminado p {
+  color: white; /* Color del texto */
+  font-size: 16px; /* Tamaño de fuente */
+  line-height: 1.5; /* Altura de línea */
+  margin: 0; /* Elimina el margen del párrafo */
+}

@@ -1,36 +1,47 @@
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     // var imagenes = ["assets/image/imagen-1.webp", "assets/image/imagen-2.webp", "assets/image/imagen-3.webp"]; // Lista de rutas de las imágenes
-//     var imagenes = ["assets/image/imagen-1.webp"]; // Lista de rutas de las imágenes
-//     var indiceImagen = 0; // Índice de la imagen actual
+window.addEventListener('load', () => {
+    const imagen = document.querySelector('.imagen');
+    const alturaVH = window.innerHeight * 0.01;
+    imagen.style.minHeight = `${window.innerHeight}px`;
+  });
 
-//     var imagenElement = document.getElementById("imagen");
 
-//     setInterval(function () {
-//         // Cambiar la imagen
-//         indiceImagen = (indiceImagen + 1) % imagenes.length;
+  $(document).ready(function() {
+    $("#sidebarToggle").click(function() {
+      showOverlay();
+    });
+  });
 
-//         // Ocultar la imagen actual
-//         imagenElement.classList.add("oculto");
+  $('#closeOverlay').click(function(event) {
+    hideOverlay();
+  });
 
-//         // Esperar un poco para que se complete la transición
-//         setTimeout(function () {
-//             imagenElement.src = imagenes[indiceImagen];
-//             // Mostrar la nueva imagen
-//             imagenElement.classList.remove("oculto");
-//         }, 500); // Tiempo de espera igual a la mitad de la duración de la transición
-//     }, 5000); // Cambia la imagen cada 5 segundos (5000 milisegundos)
+  $('a').click(function(event) {
+    event.preventDefault();
+    
+    var buttonClicked = event.currentTarget.innerHTML;
 
-//     // Función para desplegar el sidebar
-//     document.getElementById('sidebarToggle').addEventListener('click', function () {
-//         var sidebar = document.getElementById('sidebar');
-//         if (sidebar.style.right === '-250px') {
-//             sidebar.style.right = '0';
-//         } else {
-//             sidebar.style.right = '-250px';
-//         }
-//     });
-// });
+    if(buttonClicked == "Descargar PC"){
+        hideOverlay();
+    }
+
+    if(buttonClicked == "Inicio"){
+        hideOverlay();
+        $("#contenido-dinamico").load("paginas/historia.html");
+    }
+
+    if(buttonClicked == "Estadisticas"){
+        hideOverlay();
+    }
+
+  });
+
+  var audio = new Audio("assets/sounds/sound.mp3");
+
+  audio.volume = 0.03;
+
+  audio.play();
+
 
 //Cargar Service Worker
 if('serviceWorker' in navigator) 
