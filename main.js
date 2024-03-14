@@ -7,9 +7,15 @@ window.addEventListener('load', () => {
 
 
   $(document).ready(function() {
+
+    $("#contenido-dinamico").load("paginas/historia.html");
+
+
     $("#sidebarToggle").click(function() {
       showOverlay();
     });
+
+
   });
 
   $('#closeOverlay').click(function(event) {

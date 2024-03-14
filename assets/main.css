@@ -78,6 +78,7 @@ body, html {
     align-items: center;
     padding: 10px 20px;
     z-index: 10; /* Asegurarse de que el encabezado esté sobre la imagen */
+ 
   }
   
   .logo {
@@ -139,22 +140,23 @@ a#closeOverlay:hover {
 
 /* Estilos para el contenedor de contenido dinámico */
 .contenido-dinamico {
-  width: 80%; /* Ancho del contenedor */
-  max-width: 800px; /* Ancho máximo del contenedor */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-  background-color: transparent; /* Color de fondo del contenedor */
-  position: relative; /* Ajusta el posicionamiento */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* O el ancho que prefieras */
+  max-width: 1200px; /* Establece un ancho máximo si es necesario */
+  padding: 40px;
+  background: rgba(244, 244, 244, 0.299); /* Fondo blanco con transparencia para leer el contenido fácilmente */
+  color: #000; /* Color de texto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el cuadro sobre el fondo */
+  border-radius: 15px; /* Bordes redondeados */
+  z-index: 10; /* Asegúrate de que el cuadro esté sobre otros elementos */
+  overflow: auto; /* Permite el desplazamiento si el contenido es más largo que el cuadro */
+
 }
 
 /* Estilos para el cuadro difuminado */
-.cuadro-difuminado {
-  background: rgba(0, 0, 0, 0.5); /* Color negro con transparencia */
-  border-radius: 10px; /* Bordes redondeados */
-  padding: 20px; /* Espaciado interno */
-  overflow-y: scroll; /* Agrega scroll vertical si es necesario */
-  max-height: 300px; /* Altura máxima del cuadro antes de activar el scroll */
-}
 
 /* Estilos para el párrafo dentro del cuadro difuminado */
 .cuadro-difuminado p {
